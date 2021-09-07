@@ -28,8 +28,11 @@ function App() {
     };
 
     const handleEqual = () => {
-        console.log(typeof expression);
-        setExpression(math.evaluate(expression));
+        try {
+            setExpression(math.evaluate(expression));
+        } catch (e) {
+            setExpression("wrong expression");
+        }
     };
 
     return (
